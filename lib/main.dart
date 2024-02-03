@@ -22,8 +22,35 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
   _pageController = PageController(
       initialPage: 0,
-    );
+  )..addListener(_onScroll);
     super.initState();
+  }
+
+  void _onScroll(){
+  print("sss");
+  }
+
+  Widget makePage({image}){
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image:AssetImage(image),
+          fit: BoxFit.cover,
+        )
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomRight,
+            stops: [0.3, 0.9],
+            colors: [
+              Colors.black.withOpacity(.9),
+              Colors.black.withOpacity(.2),
+            ]
+          )
+        ),
+      ),
+    );
   }
 
 
@@ -33,15 +60,10 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         children: <Widget>[
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.green,
-          ),
-          Container(
-            color: Colors.red,
-          )
+          makePage(image: 'assets/images/one.jpg'),
+          makePage(image: 'assets/images/two.jpg'),
+          makePage(image: 'assets/images/three.jpg'),
+          makePage(image: 'assets/images/four.jpg'),
         ],
       ),
     );
