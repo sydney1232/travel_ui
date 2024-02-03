@@ -49,6 +49,32 @@ class _HomePageState extends State<HomePage> {
             ]
           )
         ),
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  Text("1", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)),
+                  Text("/4", style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                ],
+
+              ),
+              Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("USA", style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold)),
+                ],
+              ))
+            ],
+
+          ),
+        ),
       ),
     );
   }
