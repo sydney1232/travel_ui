@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sample_flutter/constans/constants.dart';
 
 import '../animations/FadeAnimation.dart';
 
@@ -130,7 +131,7 @@ class _TravelPageState extends State<TravelPage> {
                     FadeAnimation(
                       delay: 2.8,
                       child: Text(
-                        "READ MORE",
+                        StringConstants.READ_MORE_CONSTANT,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
