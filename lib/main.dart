@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_flutter/animations/FadeAnimation.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -58,11 +59,14 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
                 children: [
-                  Text(page.toString(),
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold)),
+                  FadeAnimation(
+                    delay: 2,
+                    child: Text(page.toString(),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold)),
+                  ),
                   Text("/4",
                       style: TextStyle(
                           color: Colors.white,
@@ -75,78 +79,91 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold),
+                    FadeAnimation(
+                      delay: 1,
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 50,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(right: 3),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
+                    FadeAnimation(
+                      delay: 1.5,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 3),
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 3),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
+                          Container(
+                            margin: EdgeInsets.only(right: 3),
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 3),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
+                          Container(
+                            margin: EdgeInsets.only(right: 3),
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 3),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
+                          Container(
+                            margin: EdgeInsets.only(right: 3),
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 3),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.grey,
+                          Container(
+                            margin: EdgeInsets.only(right: 3),
+                            child: Icon(
+                              Icons.star,
+                              color: Colors.grey,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "4.0",
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                        Text(
-                          "(2300)",
-                          style: TextStyle(color: Colors.white38, fontSize: 12),
-                        ),
-                      ],
+                          Text(
+                            "4.0",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                          Text(
+                            "(2300)",
+                            style:
+                                TextStyle(color: Colors.white38, fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 100),
-                      child: Text(
-                        descrption,
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(.7),
-                          height: 1.9,
+                    FadeAnimation(
+                      delay: 2.5,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 100),
+                        child: Text(
+                          descrption,
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(.7),
+                            height: 1.9,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(height: 20),
-                    Text(
-                      "READ MORE",
-                      style: TextStyle(color: Colors.white),
+                    FadeAnimation(
+                      delay: 2.8,
+                      child: Text(
+                        "READ MORE",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     SizedBox(height: 30),
                   ],
