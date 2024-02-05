@@ -8,13 +8,15 @@ class TravelPage extends StatefulWidget {
   final String description;
   final String title;
   final String image;
+  final int rating;
 
   const TravelPage(
       {super.key,
       required this.page,
       required this.description,
       required this.title,
-      required this.image});
+      required this.image,
+      required this.rating});
 
   @override
   State<TravelPage> createState() => _TravelPageState();
@@ -88,43 +90,18 @@ class _TravelPageState extends State<TravelPage> {
                       delay: 1.5,
                       child: Row(
                         children: [
-                          Container(
-                            margin: EdgeInsets.only(right: 3),
-                            child: Icon(
-                              Icons.star,
-                              color: Colors.yellow,
+                          for (int i = 0; i < 5; i++)
+                            Container(
+                              margin: EdgeInsets.only(right: 3),
+                              child: Icon(
+                                Icons.star,
+                                color: i < widget.rating
+                                    ? Colors.yellow
+                                    : Colors.grey,
+                              ),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 3),
-                            child: Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 3),
-                            child: Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 3),
-                            child: Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 3),
-                            child: Icon(
-                              Icons.star,
-                              color: Colors.grey,
-                            ),
-                          ),
                           Text(
-                            "4.0",
+                            widget.rating.toDouble().toString(),
                             style: TextStyle(color: Colors.white70),
                           ),
                           Text(
