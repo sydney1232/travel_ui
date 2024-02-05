@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Nunito'),
       home: HomePage(),
     ));
 
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
 
   void _onScroll() {}
 
-  Widget makePage({descrption, image, title}) {
+  Widget makePage({descrption, image, title, page}) {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
                 children: [
-                  Text("1",
+                  Text(page.toString(),
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
@@ -133,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(height: 20),
                     Padding(
-                      padding: const EdgeInsets.only(right: 50),
+                      padding: const EdgeInsets.only(right: 100),
                       child: Text(
                         descrption,
                         style: TextStyle(
@@ -142,6 +143,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 20),
+                    Text(
+                      "READ MORE",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(height: 30),
                   ],
                 ),
               )
@@ -159,22 +166,26 @@ class _HomePageState extends State<HomePage> {
         controller: _pageController,
         children: <Widget>[
           makePage(
+              page: 1,
               descrption:
                   "Yosemite National Park is in California’s Sierra Nevada mountains. It’s famed for its giant, ancient sequoia trees, and for Tunnel View, the iconic vista of towering Bridalveil Fall and the granite cliffs of El Capitan and Half Dome.",
               title: "Yosemite National Park",
               image: 'assets/images/one.jpg'),
           makePage(
+              page: 2,
               descrption:
                   "The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide strait connecting San Francisco Bay and the Pacific Ocean.",
               title: "Golden Gate Bridge",
               image: 'assets/images/two.jpg'),
           makePage(
+            page: 3,
             descrption:
                 "Sedona is regularly described as one of America's most beautiful places. Nowhere else will you find a landscape as dramatically colorful.",
             title: "Sedona",
             image: 'assets/images/three.jpg',
           ),
           makePage(
+              page: 4,
               descrption:
                   "Savannah, with its Spanish moss, Southern accents and creepy graveyards, is a lot like Charleston, South Carolina. But this city about 100 miles to the south has an eccentric streak.",
               title: "Savannah",
